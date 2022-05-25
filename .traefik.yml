@@ -1,4 +1,4 @@
-displayName: Demo Plugin
+displayName: Body Size Limit
 type: middleware
 
 import: github.com/Russia9/body-size-limit
