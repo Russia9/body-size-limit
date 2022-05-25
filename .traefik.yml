@@ -4,3 +4,6 @@ type: middleware
 import: github.com/Russia9/body-size-limit
 
 summary: 'Limit request body size'
+
+testData:
+  Limit: 5000
