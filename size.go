@@ -1,4 +1,4 @@
-// Package bodysize the bodysize plugin
+// Package bodysize the bodysize plugin.
 package bodysize
 
 import (
@@ -9,7 +9,7 @@ import (
 )
 
 // Config the plugin configuration.
-// Limit a limit in bytes
+// Limit a limit in bytes.
 type Config struct {
 	Limit int64 `json:"limit"`
 }
@@ -51,7 +51,7 @@ func (a *RequestSize) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 	}
 
 	if int64(len(all)) == a.limit {
-		http.Error(rw, err.Error(), http.StatusRequestEntityTooLarge)
+		http.Error(rw, "request body too large", http.StatusRequestEntityTooLarge)
 		return
 	}
 
