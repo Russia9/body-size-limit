@@ -3,10 +3,11 @@ package bodysize_test
 import (
 	"bytes"
 	"context"
-	"github.com/Russia9/body-size-limit"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/Russia9/body-size-limit"
 )
 
 func TestSuccess(t *testing.T) {
