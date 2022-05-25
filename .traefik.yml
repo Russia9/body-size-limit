@@ -1,11 +1,6 @@
 displayName: Demo Plugin
 type: middleware
 
-import: github.com/traefik/plugindemo
+import: github.com/Russia9/body-size-limit
 
-summary: '[Demo] Add Request Header'
-
-testData:
-  Headers:
-    X-Demo: test
-    X-URL: '{{URL}}'
+summary: 'Limit request body size'
