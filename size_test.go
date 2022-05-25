@@ -7,7 +7,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/Russia9/body-size-limit"
+	bodysize "github.com/Russia9/body-size-limit"
 )
 
 func TestSuccess(t *testing.T) {
