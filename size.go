@@ -2,6 +2,7 @@
 package body_size_limit
 
 import (
+	"bytes"
 	"context"
 	"fmt"
 	"io/ioutil"
@@ -45,6 +46,7 @@ func (a *RequestSize) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 	cutBody := http.MaxBytesReader(rw, req.Body, a.limit)
 
 	all, err := ioutil.ReadAll(cutBody)
+
 	if err != nil {
 		http.Error(rw, err.Error(), http.StatusRequestEntityTooLarge)
 		return
@@ -54,6 +56,8 @@ func (a *RequestSize) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 		http.Error(rw, "request body too large", http.StatusRequestEntityTooLarge)
 		return
 	}
+
+	req.Body = ioutil.NopCloser(bytes.NewReader(all))
 
 	a.next.ServeHTTP(rw, req)
 }
