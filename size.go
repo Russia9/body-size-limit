@@ -11,7 +11,7 @@ import (
 // Config the plugin configuration.
 // Limit a limit in bytes.
 type Config struct {
-	Limit int64 `json:"limit"`
+	Limit int64 `json:"limit" yaml:"limit"`
 }
 
 // CreateConfig creates the default plugin configuration.
