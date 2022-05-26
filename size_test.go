@@ -1,4 +1,4 @@
-package bodysize_test
+package body_size_limit_test
 
 import (
 	"bytes"

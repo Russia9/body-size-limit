@@ -1,5 +1,5 @@
-// Package bodysize the bodysize plugin.
-package bodysize
+// Package body_size_limit the body_size_limit plugin.
+package body_size_limit
 
 import (
 	"context"
