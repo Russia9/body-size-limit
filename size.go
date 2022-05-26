@@ -42,9 +42,9 @@ func New(ctx context.Context, next http.Handler, config *Config, name string) (h
 }
 
 func (a *RequestSize) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
-	req.Body = http.MaxBytesReader(rw, req.Body, a.limit)
+	cutBody := http.MaxBytesReader(rw, req.Body, a.limit)
 
-	all, err := ioutil.ReadAll(req.Body)
+	all, err := ioutil.ReadAll(cutBody)
 	if err != nil {
 		http.Error(rw, err.Error(), http.StatusRequestEntityTooLarge)
 		return
